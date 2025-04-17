@@ -1,6 +1,6 @@
 import "./navbar.css";
 import React, { useState } from "react";
-import { FiMenu, FiSun } from "react-icons/fi";
+import { FiMenu, FiSun, FiMoon } from "react-icons/fi";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar-class ">
+    <div className="navbar-class">
       <div onClick={handleNav} className="p-2 m-5">
         <FiMenu size={30} />
       </div>
@@ -26,8 +26,8 @@ function Navbar() {
           <li>projects.</li>
           <li>contact.</li>
         </ul>
-        <div className="p-2 m-5 absolute bottom-[-50%]">
-          <FiSun size={30} />
+        <div onClick={handleMode} className="p-2 m-5 absolute -bottom-[50%]">
+          {!mode ? <FiSun size={30} /> : <FiMoon size={30} />}
         </div>
       </div>
     </div>
