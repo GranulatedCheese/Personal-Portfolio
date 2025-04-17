@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <div className="root-class">
+    <div className="root-class ">
       <div onClick={handleNav} className="p-2 m-5">
         {!nav ? (
           <FiMenu size={30} className="transistion duration-75" />
@@ -40,6 +40,6 @@ function Navbar() {
   );
 }
 
-// Work on mode button. Setup md and lg screen
+//Setup md and lg screen. Set up Dark mode and light mode
 
 export default Navbar;
