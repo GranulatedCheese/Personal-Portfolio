@@ -41,5 +41,18 @@ function Navbar() {
 }
 
 //Setup md and lg screen. Set up Dark mode and light mode
+/*
+Dark Mode Colors:
+  Primary: #10191e
+  Secondary: #9193c5
+  Accent One: #ff9705
+  Accent Two: #2a6cf8
+
+Light Mode Colors:
+  Primary: #fbf9f9
+  Secondary: #404d5e
+  Accent One: #ec8918
+  Accent Two: #73a40a
+*/
 
 export default Navbar;
