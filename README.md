@@ -18,8 +18,3 @@ Note: This tech-stack is subject to change.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
-## Contact
-
-If you wish to contact me about anything, please use the contact page linked on the website.
