@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+.root-class {
+  user-select: none;
+}
+
+.navbar-class {
+  @apply fixed left-0 w-70 h-screen;
+  @apply border-r-2;
+}
+
 li {
   @apply text-3xl py-4;
+  @apply border-b-1;
+}
+
+li:first-child {
+  @apply border-y-1;
+}
+
+li:hover {
+  @apply transition duration-700 ease-in-out;
+  @apply font-bold text-4xl;
 }
