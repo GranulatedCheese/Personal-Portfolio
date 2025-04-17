@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.navbar-class {
+  @apply;
+}
+
+li {
+  @apply text-3xl py-4;
+}
