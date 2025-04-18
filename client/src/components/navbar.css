@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-.root-class {
+:root {
   user-select: none;
 }
 

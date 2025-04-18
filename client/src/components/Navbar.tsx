@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <div className="root-class ">
+    <div>
       <div onClick={handleNav} className="p-2 m-5">
         {!nav ? (
           <FiMenu size={30} className="transistion duration-75" />
@@ -31,7 +31,7 @@ function Navbar() {
             <li>projects.</li>
             <li>contact.</li>
           </ul>
-          <div onClick={handleMode} className="p-2 m-5 fixed bottom-0">
+          <div onClick={handleMode} className="p-2 m-5 fixed bottom-0 ">
             {!mode ? <FiSun size={30} /> : <FiMoon size={30} />}
           </div>
         </div>

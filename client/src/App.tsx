@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div>
+    <div data-theme="dark">
       <Navbar />
     </div>
   );
