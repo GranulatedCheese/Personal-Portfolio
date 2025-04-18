@@ -12,11 +12,10 @@ export default function Navbar() {
   const [modeActive, setMode] = useState(false);
   const handleMode = (isModeActive: boolean) => {
     setMode(isModeActive);
-    console.log(isModeActive ? "Mode is active" : "Mode is not active");
   };
 
   useEffect(() => {
-    document.body.dataset.theme = modeActive ? "dark" : "light";
+    document.body.dataset.theme = modeActive ? "dark" : "light"; // must fix
   }, [modeActive]);
 
   return (

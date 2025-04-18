@@ -5,8 +5,8 @@ import React, { useState, useEffect } from "react";
 export default function App() {
   return (
     <div className="min-h-screen">
+      <Hero />
       <Navbar />
-      {/* <Hero /> */}
     </div>
   );
 }

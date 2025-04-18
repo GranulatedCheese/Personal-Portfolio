@@ -15,14 +15,16 @@
   --color-hard-blue: #2a6cf8;
 }
 
-body[data-theme="light"] {
-  @apply bg-jazzy-white text-ocean-blue;
+html[data-theme="light"] {
+  @apply bg-linear-to-b from-jazzy-white to-[#f2ecec];
+  @apply text-ocean-blue;
   @apply transition-colors duration-300;
   @apply ease-in-out;
 }
 
-body[data-theme="dark"] {
-  @apply bg-midnight-teal text-cherry-blue;
+html[data-theme="dark"] {
+  @apply bg-linear-to-b from-midnight-teal to-[#1E1510];
+  @apply text-cherry-blue;
   @apply transition-colors duration-300;
   @apply ease-in-out;
 }
