@@ -1,11 +1,18 @@
 import Navbar from "./components/Navbar";
+import React, { useState } from "react";
 
-function App() {
+export default function App() {
+  const [modeActive, setMode] = useState(false);
+  const handleMode = (isModeActive: boolean) => {
+    setMode(isModeActive);
+    console.log(isModeActive ? "Mode is active" : "Mode is not active");
+  };
+
   return (
-    <div data-theme="dark">
-      <Navbar />
-    </div>
+    <body data-theme={modeActive ? "dark" : "light"}>
+      <div>
+        <Navbar onToggle={handleMode} />
+      </div>
+    </body>
   );
 }
-
-export default App;

@@ -10,19 +10,15 @@
 
   /* darkmode: */
   --color-midnight-teal: #10191e;
-  --color-cherry-blue: #9193c5;
+  --color-cherry-blue: #f2f3ff;
   --color-firey-orange: #ff9705;
   --color-hard-blue: #2a6cf8;
-}
-
-[data-theme="dark"] {
-  @apply bg-midnight-teal text-cherry-blue;
 }
 
 [data-theme="light"] {
   @apply bg-jazzy-white text-ocean-blue;
 }
 
-:root {
-  @apply bg-midnight-teal;
+[data-theme="dark"] {
+  @apply bg-midnight-teal text-cherry-blue;
 }

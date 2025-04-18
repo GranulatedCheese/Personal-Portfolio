@@ -2,15 +2,22 @@ import "./navbar.css";
 import React, { useState } from "react";
 import { FiMenu, FiSun, FiMoon } from "react-icons/fi";
 
-function Navbar() {
+interface NavbarProps {
+  onToggle: (isModeActive: boolean) => void;
+}
+
+function Navbar({ onToggle }: NavbarProps) {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
 
-  const [mode, setMode] = useState(false);
-  const handleMode = () => {
-    setMode(!mode);
+  // Coms with parent
+  const [isModeActive, setMode] = useState(false);
+  const toggleMode = () => {
+    const newState = !isModeActive;
+    setMode(newState);
+    onToggle(newState); // Sends to Parent
   };
 
   return (
@@ -22,7 +29,7 @@ function Navbar() {
           <FiMenu size={30} className="rotate-90 transistion duration-75" />
         )}
       </div>
-      <div className={!nav ? "md:hidden" : "navbar-class"}>
+      <div className={!nav ? "hidden" : "navbar-class"}>
         <div>
           <ul className="p-2 m-5">
             <li>home.</li>
@@ -31,8 +38,8 @@ function Navbar() {
             <li>projects.</li>
             <li>contact.</li>
           </ul>
-          <div onClick={handleMode} className="p-2 m-5 fixed bottom-0 ">
-            {!mode ? <FiSun size={30} /> : <FiMoon size={30} />}
+          <div onClick={toggleMode} className="p-2 m-5 fixed bottom-0 ">
+            {!isModeActive ? <FiSun size={30} /> : <FiMoon size={30} />}
           </div>
         </div>
       </div>
