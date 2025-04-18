@@ -1,32 +1,34 @@
 import "./navbar.css";
-import React, { useState } from "react";
-import { FiMenu, FiSun, FiMoon } from "react-icons/fi";
+import React, { useState, useEffect } from "react";
+import { FiMenu } from "react-icons/fi";
+import Mode from "./Mode";
 
-interface NavbarProps {
-  onToggle: (isModeActive: boolean) => void;
-}
-
-function Navbar({ onToggle }: NavbarProps) {
+export default function Navbar() {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
 
-  // Coms with parent
-  const [isModeActive, setMode] = useState(false);
-  const toggleMode = () => {
-    const newState = !isModeActive;
-    setMode(newState);
-    onToggle(newState); // Sends to Parent
+  const [modeActive, setMode] = useState(false);
+  const handleMode = (isModeActive: boolean) => {
+    setMode(isModeActive);
+    console.log(isModeActive ? "Mode is active" : "Mode is not active");
   };
+
+  useEffect(() => {
+    document.body.dataset.theme = modeActive ? "dark" : "light";
+  }, [modeActive]);
 
   return (
     <div>
       <div onClick={handleNav} className="p-2 m-5">
         {!nav ? (
-          <FiMenu size={30} className="transistion duration-75" />
+          <FiMenu size={30} className="transistion duration-150" />
         ) : (
-          <FiMenu size={30} className="rotate-90 transistion duration-75" />
+          <FiMenu
+            size={30}
+            className="rotate-90 transistion duration-150 burger"
+          />
         )}
       </div>
       <div className={!nav ? "hidden" : "navbar-class"}>
@@ -38,9 +40,7 @@ function Navbar({ onToggle }: NavbarProps) {
             <li>projects.</li>
             <li>contact.</li>
           </ul>
-          <div onClick={toggleMode} className="p-2 m-5 fixed bottom-0 ">
-            {!isModeActive ? <FiSun size={30} /> : <FiMoon size={30} />}
-          </div>
+          <Mode onToggle={handleMode} />
         </div>
       </div>
     </div>
@@ -61,5 +61,3 @@ Light Mode Colors:
   Accent One: #ec8918
   Accent Two: #73a40a
 */
-
-export default Navbar;

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@tailwind utilities;
 
 @theme {
   /* lightmode: */
@@ -15,14 +14,8 @@
   --color-hard-blue: #2a6cf8;
 }
 
-body[data-theme="light"] {
-  @apply bg-jazzy-white text-ocean-blue;
-  @apply transition-colors duration-300;
-  @apply ease-in-out;
-}
-
-body[data-theme="dark"] {
-  @apply bg-midnight-teal text-cherry-blue;
-  @apply transition-colors duration-300;
-  @apply ease-in-out;
+.main-cirlce-dark {
+  @apply w-100 h-100 bg-red;
+  border-radius: 50%;
+  display: inline-block;
 }

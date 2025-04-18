@@ -5,7 +5,8 @@
 }
 
 .navbar-class {
-  @apply fixed left-0 w-70 h-screen;
+  @apply transition-opacity duration-150 ease-in-out;
+  @apply fixed left-0 w-90 h-screen;
   @apply border-r-2;
 }
 
