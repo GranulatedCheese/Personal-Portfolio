@@ -4,37 +4,37 @@ import { FiMenu } from "react-icons/fi";
 import Mode from "./Mode";
 
 export default function Navbar() {
-  const [nav, setNav] = useState(false);
-  const handleNav = () => {
-    setNav(!nav);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
-  const [modeActive, setMode] = useState(false);
-  const handleMode = (isModeActive: boolean) => {
-    setMode(isModeActive);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const handleModeToggle = (enabled: boolean) => {
+    setIsDarkMode(enabled);
   };
 
   useEffect(() => {
-    document.body.dataset.theme = modeActive ? "dark" : "light";
-    let themeData = document.getElementById("theme-id");
-    if (themeData != null)
-      themeData.dataset.theme = modeActive ? "dark" : "light";
-  }, [modeActive]);
+    const theme = isDarkMode ? "dark" : "light";
+    document.body.dataset.theme = theme;
+
+    const themeElement = document.getElementById("theme-id");
+    if (themeElement) themeElement.dataset.theme = theme;
+  }, [isDarkMode]);
 
   return (
     <div>
-      <div onClick={handleNav} className="p-2 m-5">
-        {!nav ? (
-          <FiMenu size={30} className="transistion duration-150" />
-        ) : (
-          <FiMenu
-            size={30}
-            className="rotate-90 transistion duration-150 burger"
-          />
-        )}
-      </div>
-      <div className={!nav ? "hidden" : "navbar-class"} id="theme-id">
-        <div>
+      <button onClick={toggleMenu} className="p-2 m-5">
+        <FiMenu
+          size={30}
+          className={`transition duration-150 ${
+            isMenuOpen ? "rotate-90 burger" : ""
+          }`}
+        />
+      </button>
+
+      {isMenuOpen && (
+        <nav className="navbar-class" id="theme-id">
           <ul className="p-2 m-5">
             <li>home.</li>
             <li>about.</li>
@@ -42,9 +42,9 @@ export default function Navbar() {
             <li>projects.</li>
             <li>contact.</li>
           </ul>
-          <Mode onToggle={handleMode} />
-        </div>
-      </div>
+          <Mode onToggle={handleModeToggle} />
+        </nav>
+      )}
     </div>
   );
 }
