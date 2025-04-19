@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../index.css";
 
 :root {
   user-select: none;
@@ -22,3 +23,11 @@ li:first-child {
 li:hover {
   @apply font-bold text-4xl rounded-bl-sm;
 }
+
+/* div[data-theme="light"] {
+  @apply bg-jazzy-white;
+}
+
+div[data-theme="dark"] {
+  @apply bg-midnight-teal;
+} */

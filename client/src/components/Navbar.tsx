@@ -15,7 +15,10 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    document.body.dataset.theme = modeActive ? "dark" : "light"; // must fix
+    document.body.dataset.theme = modeActive ? "dark" : "light";
+    let themeData = document.getElementById("theme-id");
+    if (themeData != null)
+      themeData.dataset.theme = modeActive ? "dark" : "light";
   }, [modeActive]);
 
   return (
@@ -30,7 +33,7 @@ export default function Navbar() {
           />
         )}
       </div>
-      <div className={!nav ? "hidden" : "navbar-class"}>
+      <div className={!nav ? "hidden" : "navbar-class"} id="theme-id">
         <div>
           <ul className="p-2 m-5">
             <li>home.</li>

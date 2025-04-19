@@ -1,19 +1,5 @@
 @import "tailwindcss";
-@tailwind utilities;
-
-@theme {
-  /* lightmode: */
-  --color-jazzy-white: #fbf9f9;
-  --color-ocean-blue: #404d5e;
-  --color-hot-orange: #ec8918;
-  --color-tree-green: #73a40a;
-
-  /* darkmode: */
-  --color-midnight-teal: #10191e;
-  --color-cherry-blue: #f2f3ff;
-  --color-firey-orange: #ff9705;
-  --color-hard-blue: #2a6cf8;
-}
+@import "../index.css";
 
 .main-circle-dark {
   width: calc(100vw * 0.7);
