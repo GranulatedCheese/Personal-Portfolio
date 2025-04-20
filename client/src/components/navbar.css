@@ -24,10 +24,10 @@ li:hover {
   @apply font-bold text-4xl rounded-bl-sm;
 }
 
-.navbar-class[data-theme="light"] {
-  @apply bg-jazzy-white;
+body[data-theme="dark"] .navbar-class {
+  @apply bg-midnight-teal;
 }
 
-.navbar-class[data-theme="dark"] {
-  @apply bg-midnight-teal;
+body[data-theme="light"] .navbar-class {
+  @apply bg-jazzy-white;
 }

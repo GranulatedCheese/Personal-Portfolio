@@ -17,9 +17,6 @@ export default function Navbar() {
   useEffect(() => {
     const theme = isDarkMode ? "dark" : "light";
     document.body.dataset.theme = theme;
-
-    const themeElement = document.getElementById("theme-id");
-    if (themeElement) themeElement.dataset.theme = theme;
   }, [isDarkMode]);
 
   return (
@@ -34,7 +31,7 @@ export default function Navbar() {
       </button>
 
       {isMenuOpen && (
-        <nav className="navbar-class" id="theme-id">
+        <nav className="navbar-class">
           <ul className="p-2 m-5">
             <li>home.</li>
             <li>about.</li>
