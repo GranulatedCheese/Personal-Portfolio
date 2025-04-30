@@ -1,4 +1,4 @@
-import "./navbar.css";
+import "../Navbar/navbar.css";
 import React, { useState } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
 

@@ -1,7 +1,7 @@
 import "./navbar.css";
 import React, { useState, useEffect } from "react";
 import { FiMenu } from "react-icons/fi";
-import Mode from "./Mode";
+import Mode from "../Mode/Mode";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
