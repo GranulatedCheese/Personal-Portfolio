@@ -2,8 +2,8 @@
 @import "../../index.css";
 
 .main-circle-dark {
-  width: calc(100vw * 0.7);
-  height: calc(100vh * 1.4);
+  width: 100vw;
+  height: 200vh;
   border-radius: 50%;
   display: inline-block;
   @apply bg-linear-to-br from-hot-orange via-pink-800/80 to-hard-blue;
