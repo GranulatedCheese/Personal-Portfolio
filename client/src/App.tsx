@@ -1,12 +1,11 @@
 import Hero from "./components/Hero/Hero";
-import Navbar from "./components/Navbar/Navbar";
-import React from "react";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 export default function App() {
   return (
     <div className="min-h-screen" id="theme-id">
       <Hero />
-      <Navbar />
+      <Sidebar />
     </div>
   );
 }

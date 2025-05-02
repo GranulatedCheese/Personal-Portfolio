@@ -1,24 +1,13 @@
-import "../Navbar/navbar.css";
-import React, { useState } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
+import { useDarkMode } from "../../hooks/useDarkMode";
 
-interface NavbarProps {
-  onToggle: (isModeActive: boolean) => void;
-}
-
-export default function Mode({ onToggle }: NavbarProps) {
-  const [isModeActive, setMode] = useState(false);
-  const toggleMode = () => {
-    const newState = !isModeActive;
-    setMode(newState);
-    onToggle(newState);
-  };
-
+export default function Theme() {
+  const [isDark, setIsDark] = useDarkMode();
   return (
     <div>
-      <div onClick={toggleMode} className="p-2 m-5 fixed bottom-0 ">
-        {!isModeActive ? <FiSun size={30} /> : <FiMoon size={30} />}
-      </div>
+      <button onClick={() => setIsDark(!isDark)}>
+        {!isDark ? <FiSun size={45} /> : <FiMoon size={45} />}
+      </button>
     </div>
   );
 }
