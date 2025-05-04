@@ -39,5 +39,9 @@ button {
 }
 
 .overlay-class {
-  @apply transition-all duration-300;
+  @apply transition-opacity duration-150 opacity-0 delay-150;
+}
+
+.overlay-class.show {
+  @apply opacity-100;
 }

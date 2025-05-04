@@ -36,11 +36,17 @@ export default function Sidebar() {
         </button>
       </div>
 
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-black/40 z-40 overlay-class"></div>
-      )}
+      <div
+        className={`fixed inset-0 bg-black/40 z-40 overlay-class ${
+          isMenuOpen ? "show" : ""
+        }`}
+      />
 
-      {isMenuOpen && (
+      <div
+        className={`transition duration-300 ease-in-out ${
+          isMenuOpen ? "" : "-translate-x-[100%]"
+        }`}
+      >
         <nav className="sidebar-class">
           <ul className="mt-15">
             <button
@@ -78,7 +84,7 @@ export default function Sidebar() {
             <Mode />
           </div>
         </nav>
-      )}
+      </div>
     </>
   );
 }
