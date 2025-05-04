@@ -15,6 +15,14 @@ export default function Sidebar() {
     document.body.dataset.theme = theme;
   }, [isDarkTheme]);
 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <>
       <div className="fixed top-6 left-6 z-50">
@@ -35,11 +43,36 @@ export default function Sidebar() {
       {isMenuOpen && (
         <nav className="sidebar-class">
           <ul className="mt-15">
-            <button className="nav-button">home.</button>
-            <button className="nav-button">about.</button>
-            <button className="nav-button">overview.</button>
-            <button className="nav-button">projects.</button>
-            <button className="nav-button">contact.</button>
+            <button
+              className="nav-button"
+              onClick={() => scrollToSection("home")}
+            >
+              home.
+            </button>
+            <button
+              className="nav-button"
+              onClick={() => scrollToSection("about")}
+            >
+              about.
+            </button>
+            <button
+              className="nav-button"
+              onClick={() => scrollToSection("overview")}
+            >
+              overview.
+            </button>
+            <button
+              className="nav-button"
+              onClick={() => scrollToSection("projects")}
+            >
+              projects.
+            </button>
+            <button
+              className="nav-button"
+              onClick={() => scrollToSection("contact")}
+            >
+              contact.
+            </button>
           </ul>
           <div className="theme-button">
             <Mode />
