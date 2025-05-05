@@ -1,7 +1,18 @@
+import { useEffect } from "react";
 import Hero from "./components/Hero/Hero";
 import Sidebar from "./components/Sidebar/Sidebar";
+import { useDarkMode } from "./hooks/useDarkMode";
 
 export default function App() {
+  useEffect(() => {
+    const onLoadFunction = () => {
+      const mode = localStorage.getItem("theme");
+      document.body.dataset.theme = mode!;
+    };
+
+    onLoadFunction();
+  }, []);
+
   return (
     <div id="theme-id" className="relative overflow-x-hidden">
       <Sidebar />
