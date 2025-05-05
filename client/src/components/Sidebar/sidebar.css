@@ -19,7 +19,7 @@ ul {
 }
 
 .sidebar-class {
-  @apply fixed top-0 left-0 h-full p-6 pb-4 z-40 flex flex-col justify-between;
+  @apply fixed top-0 left-0 h-full p-6 pb-4 z-490 flex flex-col justify-between;
   @apply lg:w-[22%] md:w-[40%] w-[90%];
   @apply transition-all duration-300 ease-in-out;
 }

@@ -17,7 +17,7 @@
 
 body[data-theme="light"] {
   @apply bg-linear-to-b from-jazzy-white to-[#f2ecec];
-  @apply text-ocean-blue;
+  @apply text-midnight-teal;
   @apply transition-colors duration-300 ease-in-out;
 }
 
@@ -25,4 +25,22 @@ body[data-theme="dark"] {
   @apply bg-linear-to-b from-midnight-teal to-[#1E1510];
   @apply text-cherry-blue;
   @apply transition-colors duration-300 ease-in-out;
+}
+
+.animated-circle {
+  @apply w-[100vw] h-[100vw];
+  @apply rounded-full;
+  @apply fixed md:top-[40%] top-[80%] z-0;
+  @apply bg-linear-to-b from-firey-orange via-hard-blue to-ocean-blue;
+  scale: 1;
+  animation: animated-circle cubic-bezier(0.05, 0.6, 0.25, 1);
+  animation-timeline: scroll();
+}
+
+@keyframes animated-circle {
+  to {
+    scale: 2;
+    position: fixed;
+    top: 0;
+  }
 }

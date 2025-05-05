@@ -25,7 +25,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="fixed top-6 left-6 z-50">
+      <div className="fixed top-6 left-6 z-500">
         <button onClick={toggleMenu}>
           <FiMenu
             size={45}
@@ -37,7 +37,7 @@ export default function Sidebar() {
       </div>
 
       <div
-        className={`fixed inset-0 bg-black/40 z-40 overlay-class ${
+        className={`fixed inset-0 bg-black/40 z-490 overlay-class ${
           isMenuOpen ? "show" : ""
         }`}
       />
