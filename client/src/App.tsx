@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
-import { useDarkMode } from "./hooks/useDarkMode";
 import Home from "./pages/Home/Home";
+import Mediabar from "./components/Mediabar/Mediabar";
 
 export default function App() {
   useEffect(() => {
@@ -14,46 +14,34 @@ export default function App() {
   }, []);
 
   return (
-    <div id="theme-id" className="relative overflow-x-hidden">
+    <div className="relative overflow-x-hidden">
       <Sidebar />
+      {/* <Mediabar /> */}
 
-      <div className="animated-circle" />
+      <div className="animated-circle" id="theme-id" />
 
       <div className="font-bold text-4xl relative z-40">
-        <section className="min-h-screen flex items-center justify-center" />
-
-        <section
-          className="min-h-screen flex items-center justify-center"
-          id="home"
-        >
+        <section className="min-h-screen border-1">
           <Home />
         </section>
 
-        <section
-          className="min-h-screen flex items-center justify-center"
-          id="about"
-        >
+        <section className="min-h-screen border-1" id="home">
+          <h1>Hero</h1>
+        </section>
+
+        <section className="min-h-screen border-1" id="about">
           <h1>About Me</h1>
         </section>
 
-        <section
-          className="min-h-screen flex items-center justify-center"
-          id="overview"
-        >
+        <section className="min-h-screen flex border-1" id="overview">
           <h1>Overview</h1>
         </section>
 
-        <section
-          className="min-h-screen flex items-center justify-center"
-          id="projects"
-        >
+        <section className="min-h-screen flex border-1" id="projects">
           <h1>Projects</h1>
         </section>
 
-        <section
-          className="min-h-screen flex items-center justify-center"
-          id="contact"
-        >
+        <section className="min-h-screen flex border-1" id="contact">
           <h1>Contact</h1>
         </section>
       </div>

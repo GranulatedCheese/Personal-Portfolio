@@ -4,6 +4,8 @@ import { FiMenu } from "react-icons/fi";
 import Mode from "../Mode/Mode";
 
 export default function Sidebar() {
+  const menuSize = window.innerWidth >= 500 ? 55 : 45;
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -25,10 +27,10 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="fixed top-6 left-6 z-500">
+      <div className="fixed top-6 left-6 z-500 burger-button">
         <button onClick={toggleMenu}>
           <FiMenu
-            size={45}
+            size={menuSize}
             className={`transition duration-150 ${
               isMenuOpen ? "rotate-90 burger" : ""
             }`}
@@ -37,7 +39,7 @@ export default function Sidebar() {
       </div>
 
       <div
-        className={`fixed inset-0 bg-black/40 z-490 overlay-class ${
+        className={`fixed inset-0 bg-black/60 z-490 overlay-class ${
           isMenuOpen ? "show" : ""
         }`}
       />
@@ -48,7 +50,7 @@ export default function Sidebar() {
         }`}
       >
         <nav className="sidebar-class">
-          <ul className="mt-15">
+          <ul className="mt-20">
             <button
               className="nav-button"
               onClick={() => scrollToSection("home")}

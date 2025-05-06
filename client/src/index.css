@@ -1,41 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @tailwind utilities;
 
 @theme {
-  /* lightmode: */
   --color-jazzy-white: #fbf9f9;
-  --color-ocean-blue: #404d5e;
-  --color-hot-orange: #ec8918;
-  --color-tree-green: #73a40a;
-
-  /* darkmode: */
+  --color-meta-grey: #4b5558;
   --color-midnight-teal: #10191e;
   --color-cherry-blue: #f2f3ff;
-  --color-firey-orange: #ff9705;
-  --color-hard-blue: #2a6cf8;
+  --color-ocean-blue: #4d3492;
+  --color-sky-grey: #e5eaef;
+
+  --font-roboto: "Roboto", sans-serif;
 }
 
 body[data-theme="light"] {
-  @apply bg-linear-to-b from-jazzy-white to-[#f2ecec];
-  @apply text-midnight-teal;
+  @apply bg-jazzy-white;
+  @apply text-ocean-blue font-roboto;
   @apply transition-colors duration-300 ease-in-out;
 }
 
 body[data-theme="dark"] {
   @apply bg-linear-to-b from-midnight-teal to-[#1E1510];
-  @apply text-cherry-blue;
+  @apply text-cherry-blue font-roboto;
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+#theme-id[data-theme="light"] {
+  @apply bg-linear-to-r from-[#5170ff] to-[#ff66c4];
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+#theme-id[data-theme="dark"] {
+  @apply bg-linear-to-b from-[#e44859] via-[#2b8da9] to-[#ebd761];
   @apply transition-colors duration-300 ease-in-out;
 }
 
 .animated-circle {
   @apply w-[100vw] h-[100vw];
   @apply rounded-full;
-  @apply fixed md:top-[40%] top-[80%] z-0;
-  @apply bg-linear-to-b from-firey-orange via-hard-blue to-ocean-blue;
+  @apply fixed top-[80%] z-0;
+
   scale: 2.5;
   animation: animated-circle cubic-bezier(0.05, 1.62, 0.25, 1);
   @media (width >= 48rem) {
-    scale: 1;
+    scale: 1.3;
     animation: animated-circle cubic-bezier(0.05, 0.6, 0.25, 1);
   }
   animation-timeline: scroll();
