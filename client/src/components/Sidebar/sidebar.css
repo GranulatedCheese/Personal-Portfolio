@@ -15,11 +15,12 @@ body[data-theme="light"] .sidebar-class {
 
 ul {
   @apply flex flex-col;
-  @apply text-3xl font-semibold;
+  @apply md:text-3xl text-2xl font-semibold;
 }
 
 .sidebar-class {
-  @apply fixed top-0 left-0 h-full p-6 pb-4 z-490 flex flex-col justify-between;
+  @apply fixed top-0 left-0 h-full z-490;
+  @apply p-6 pb-4 flex flex-col justify-between;
   @apply lg:w-[22%] md:w-[40%] w-[90%];
   @apply transition-all duration-300 ease-in-out;
 }
@@ -32,6 +33,14 @@ button {
   @apply my-2 text-left w-full p-2 py-7 pl-3;
   @apply border-b-1;
   @apply transition duration-300 delay-75 hover:-translate-y-1 md:hover:scale-105;
+
+  @media (height <= 48rem) {
+    @apply py-3;
+  }
+
+  @media (height <= 30rem) {
+    @apply py-0.5;
+  }
 }
 
 .theme-button {

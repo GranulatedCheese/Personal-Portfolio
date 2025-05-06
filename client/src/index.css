@@ -32,15 +32,24 @@ body[data-theme="dark"] {
   @apply rounded-full;
   @apply fixed md:top-[40%] top-[80%] z-0;
   @apply bg-linear-to-b from-firey-orange via-hard-blue to-ocean-blue;
-  scale: 1;
-  animation: animated-circle cubic-bezier(0.05, 0.6, 0.25, 1);
+  scale: 2.5;
+  animation: animated-circle cubic-bezier(0.05, 1.62, 0.25, 1);
+  @media (width >= 48rem) {
+    scale: 1;
+    animation: animated-circle cubic-bezier(0.05, 0.6, 0.25, 1);
+  }
   animation-timeline: scroll();
 }
 
 @keyframes animated-circle {
   to {
-    scale: 2;
+    @media (width >= 48rem) {
+      scale: 2;
+      position: fixed;
+      top: 0;
+    }
+    scale: 5;
     position: fixed;
-    top: 0;
+    top: 1;
   }
 }

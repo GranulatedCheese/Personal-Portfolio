@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import Hero from "./components/Hero/Hero";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { useDarkMode } from "./hooks/useDarkMode";
+import Home from "./pages/Home/Home";
 
 export default function App() {
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function App() {
           className="min-h-screen flex items-center justify-center"
           id="home"
         >
-          <Hero />
+          <Home />
         </section>
 
         <section
