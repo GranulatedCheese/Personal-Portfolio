@@ -8,14 +8,16 @@
 
 .title-card-class h1 {
   @apply md:text-[14rem] text-[8rem] text-left uppercase;
-  @apply font-extrabold text-sky-grey/50;
-  @apply p-1 md:ml-30 md:rotate-0 rotate-90 md:mb-55;
+  @apply font-extrabold;
+  @apply p-1 md:ml-30 md:rotate-0 rotate-90 md:mb-55 relative -z-400;
+  @apply text-sky-grey/50;
 }
 
 .title-card-class p {
-  @apply text-meta-grey md:text-4xl text-xl text-justify md:font-light font-normal;
+  @apply md:text-4xl text-xl text-justify md:font-light font-normal;
   @apply md:w-[64rem] w-screen;
-  @apply absolute md:top-[31%] top-[20%] md:right-[6%];
+  @apply absolute md:top-[31%] top-[20%] md:right-[6%] -z-300;
+  @apply text-meta-grey;
   @media (width <= 48rem) {
     @apply p-5;
   }

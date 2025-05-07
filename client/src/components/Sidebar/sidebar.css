@@ -12,7 +12,7 @@ body[data-theme="light"] .sidebar-class {
   @apply transition-colors duration-300 ease-in-out;
 }
 
-ul {
+ul.sidebar {
   @apply flex flex-col;
   @apply md:text-3xl text-2xl font-semibold;
 }
@@ -24,14 +24,9 @@ ul {
   @apply transition-all duration-300 ease-in-out;
 }
 
-button {
-  @apply transition duration-300 delay-75 hover:-translate-y-1 md:hover:scale-105;
-}
-
-.nav-button {
+.sidebar-nav-button {
   @apply my-2 text-left w-full p-2 py-7 pl-3;
   @apply border-b-1;
-  @apply transition duration-300 delay-75 hover:-translate-y-1 md:hover:scale-105;
 
   @media (height <= 48rem) {
     @apply py-3;

@@ -50,33 +50,33 @@ export default function Sidebar() {
         }`}
       >
         <nav className="sidebar-class">
-          <ul className="mt-20">
+          <ul className="mt-20 sidebar">
             <button
-              className="nav-button"
+              className="sidebar-nav-button"
               onClick={() => scrollToSection("home")}
             >
               home.
             </button>
             <button
-              className="nav-button"
+              className="sidebar-nav-button"
               onClick={() => scrollToSection("about")}
             >
               about.
             </button>
             <button
-              className="nav-button"
+              className="sidebar-nav-button"
               onClick={() => scrollToSection("overview")}
             >
               overview.
             </button>
             <button
-              className="nav-button"
+              className="sidebar-nav-button"
               onClick={() => scrollToSection("projects")}
             >
               projects.
             </button>
             <button
-              className="nav-button"
+              className="sidebar-nav-button"
               onClick={() => scrollToSection("contact")}
             >
               contact.
