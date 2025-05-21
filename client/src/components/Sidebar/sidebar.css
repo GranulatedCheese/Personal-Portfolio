@@ -1,14 +1,8 @@
 @import "../../index.css";
 
-body[data-theme="dark"] .sidebar-class {
-  @apply bg-midnight-teal;
-  @apply text-jazzy-white;
-  @apply transition-colors duration-300 ease-in-out;
-}
-
-body[data-theme="light"] .sidebar-class {
-  @apply bg-jazzy-white;
-  @apply text-ocean-blue;
+body .sidebar-class {
+  @apply bg-jazzy-white dark:bg-midnight-teal;
+  @apply text-ocean-blue dark:text-jazzy-white;
   @apply transition-colors duration-300 ease-in-out;
 }
 

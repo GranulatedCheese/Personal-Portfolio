@@ -17,7 +17,7 @@
   @apply md:text-4xl text-xl text-justify md:font-light font-normal;
   @apply md:w-[64rem] w-screen;
   @apply absolute md:top-[31%] top-[20%] md:right-[6%] -z-300;
-  @apply text-meta-grey;
+  @apply text-meta-grey dark:text-red-500;
   @media (width <= 48rem) {
     @apply p-5;
   }

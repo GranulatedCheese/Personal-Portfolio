@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Home from "./pages/Home/Home";
-import Mediabar from "./components/Mediabar/Mediabar";
 
 export default function App() {
   useEffect(() => {
@@ -16,7 +15,6 @@ export default function App() {
   return (
     <div className="relative overflow-x-hidden">
       <Sidebar />
-      <Mediabar />
 
       <div className="animated-circle" id="theme-id" />
 

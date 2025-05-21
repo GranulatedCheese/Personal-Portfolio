@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 @tailwind utilities;
 
 @theme {
@@ -13,25 +15,9 @@
   --font-roboto: "Roboto", sans-serif;
 }
 
-body[data-theme="light"] {
-  @apply bg-jazzy-white;
-  @apply text-ocean-blue font-roboto;
-  @apply transition-colors duration-300 ease-in-out;
-}
-
-body[data-theme="dark"] {
-  @apply bg-linear-to-b from-midnight-teal to-[#1E1510];
-  @apply text-cherry-blue font-roboto;
-  @apply transition-colors duration-300 ease-in-out;
-}
-
-#theme-id[data-theme="light"] {
-  @apply bg-linear-to-r from-[#5170ff] to-[#ff66c4];
-  @apply transition-colors duration-300 ease-in-out;
-}
-
-#theme-id[data-theme="dark"] {
-  @apply bg-linear-to-b from-[#e44859] via-[#2b8da9] to-[#ebd761];
+body {
+  @apply bg-jazzy-white dark:bg-linear-to-b dark:from-midnight-teal dark:to-[#1E1510];
+  @apply text-ocean-blue dark:text-cherry-blue font-roboto;
   @apply transition-colors duration-300 ease-in-out;
 }
 
@@ -39,6 +25,9 @@ body[data-theme="dark"] {
   @apply w-[100vw] h-[100vw];
   @apply rounded-full;
   @apply fixed top-[80%] z-0;
+
+  @apply bg-linear-to-r from-[#5170ff] to-[#ff66c4] dark:bg-linear-to-b dark:from-[#e44859] dark:via-[#2b8da9] dark:to-[#ebd761];
+  @apply transition-colors duration-300 ease-in-out;
 
   scale: 2.5;
   animation: animated-circle cubic-bezier(0.05, 1.62, 0.25, 1);
